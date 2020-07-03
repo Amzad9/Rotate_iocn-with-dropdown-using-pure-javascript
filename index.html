@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            width: 300px;
+            position: relative;
+            height: 40px;
+        }
+
+        .minimal {
+            position: relative;
+            display: inline-block;
+        }
+
+        .minimal i {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            pointer-events: none;
+            font-size: 14px;
+        }
+
+        .rotate {
+            transition: all 0.2s linear;
+            -webkit-transition: all 0.2s linear;
+            -moz-transition: all 0.2s linear;
+            -ms-transition: all 0.2s linear;
+            -o-transition: all 0.2s linear;
+        }
+
+        .rotate.down {
+            transform: rotate(180deg);
+            -webkit-transform: rotate(180deg);
+            -moz-transform: rotate(180deg);
+            -ms-transform: rotate(180deg);
+            -o-transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="minimal">
+        <select class="onslect">
+            <option value="">- specify -</option>
+            <option value="Abu Dhabi">Abu Dhabi</option>
+            <option value="Ajman">Ajman</option>
+            <option value="Dubai">Dubai</option>
+            <option value="Fujairah">Fujairah</option>
+            <option value="Ras Al Khaimah">Ras Al Khaimah</option>
+            <option value="Sharjah">Sharjah</option>
+            <option value="Umm Al Quwain">Umm Al Quwain</option>
+        </select>
+        <i class="fa fa-chevron-down rotate"></i>
+    </div>
+</body>
+<script>
+    let select = document.querySelector('.onslect');
+    let rotateIcon = document.querySelector('.rotate');
+
+    select.addEventListener('focus', () => {
+        rotateIcon.classList.add('down');
+    });
+    select.addEventListener('blur', () => {
+        rotateIcon.classList.remove('down');
+    });
+    select.addEventListener('change', () => {
+        rotateIcon.classList.remove('down');
+    });
+</script>
+
+</html>
